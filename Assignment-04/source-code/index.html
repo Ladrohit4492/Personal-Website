@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mumbai Indians IPL Dashboard</title>
+
+    <!-- Tailwind CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="bg-slate-900 text-white min-h-screen p-6">
+
+    <!-- HEADER -->
+    <div class="text-center mb-10">
+        <h1 class="text-4xl font-bold text-cyan-400">
+            🏏 IPL Match Dashboard
+        </h1>
+
+        <h2 id="teamName" class="text-yellow-400 mt-3 text-xl">
+            Mumbai Indians
+        </h2>
+
+        <div class="w-32 h-1 bg-cyan-400 mx-auto mt-4 rounded-full"></div>
+    </div>
+
+    <!-- METRIC CARDS -->
+    <div class="grid md:grid-cols-3 gap-6 mb-10">
+
+        <div class="glass p-6 rounded-xl text-center">
+            <p class="text-sm text-yellow-400">Total Runs</p>
+            <h2 id="totalRuns" class="text-3xl font-bold text-cyan-400">0</h2>
+        </div>
+
+        <div class="glass p-6 rounded-xl text-center">
+            <p class="text-sm text-yellow-400">Wickets Lost</p>
+            <h2 id="wickets" class="text-3xl font-bold text-cyan-400">0</h2>
+        </div>
+
+        <div class="glass p-6 rounded-xl text-center">
+            <p class="text-sm text-yellow-400">Run Rate</p>
+            <h2 id="runRate" class="text-3xl font-bold text-cyan-400">0</h2>
+        </div>
+
+    </div>
+
+    <!-- CHARTS SECTION -->
+    <div class="grid md:grid-cols-2 gap-8 mb-12">
+
+        <!-- Line Chart -->
+        <div class="glass p-6 rounded-xl">
+            <h3 class="text-yellow-400 mb-3">📈 Runs Per Over</h3>
+            <div id="runChart"></div>
+        </div>
+
+        <!-- Bar Chart -->
+        <div class="glass p-6 rounded-xl">
+            <h3 class="text-yellow-400 mb-3">📊 Over Comparison</h3>
+            <div id="barChart"></div>
+        </div>
+
+        <!-- Doughnut Chart -->
+        <div class="glass p-6 rounded-xl md:col-span-2 flex flex-col items-center">
+            <h3 class="text-yellow-400 mb-4">🔥 Boundary Breakdown</h3>
+            <div style="width:300px;">
+                <div id="boundaryChart"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- PLAYER SCORE TABLE -->
+    <div class="glass p-8 rounded-xl">
+
+        <h2 class="text-2xl text-yellow-400 mb-6">
+            🏏 Player Scorecard
+        </h2>
+
+        <table class="w-full text-left border-collapse">
+
+            <thead>
+                <tr class="text-cyan-400 border-b border-gray-600">
+                    <th class="py-3">Player</th>
+                    <th class="py-3">Runs</th>
+                    <th class="py-3">Balls</th>
+                    <th class="py-3">Strike Rate</th>
+                </tr>
+            </thead>
+
+            <tbody id="playerTable" class="text-gray-300">
+                <!-- JS will insert rows here -->
+            </tbody>
+
+        </table>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

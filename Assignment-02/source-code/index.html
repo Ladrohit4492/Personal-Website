@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Fresh Veggie Store</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Bootstrap CDN -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    body {
+      background-color: #f1f8f4;
+    }
+
+    .navbar-brand {
+      font-weight: bold;
+      color: #28a745 !important;
+    }
+
+    .veg-card {
+      transition: transform 0.3s;
+    }
+
+    .veg-card:hover {
+      transform: scale(1.05);
+    }
+
+    .price {
+      color: #28a745;
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    footer {
+      background-color: #198754;
+      color: white;
+      padding: 15px;
+      margin-top: 40px;
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+  <div class="container">
+    <a class="navbar-brand" href="#">🥬 FreshVeggies</a>
+
+    <ul class="navbar-nav ms-auto">
+      <li class="nav-item">
+        <a class="nav-link fw-bold" href="#">Cart 🛒 <span id="cartCount">0</span></a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HEADER -->
+<div class="container text-center my-5">
+  <h1 class="fw-bold">Fresh Vegetables Delivered</h1>
+  <p class="text-muted">Organic | Healthy | Farm Fresh</p>
+</div>
+
+<!-- VEGETABLE LIST -->
+<div class="container">
+  <div class="row" id="vegList">
+    <!-- Vegetables loaded by JS -->
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer class="text-center">
+  <p>© 2026 FreshVeggies | Designed by Rohit Lad</p>
+</footer>
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+  const vegetables = [
+    {
+      name: "Tomato",
+      price: 40,
+      image: "data:image/jpeg;base64,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   "
+    },
+    {
+      name: "Potato",
+      price: 30,
+      image: "https://images.unsplash.com/photo-1582515073490-39981397c445"
+    },
+    {
+      name: "Onion",
+      price: 35,
+      image: "https://images.unsplash.com/photo-1601004890684-d8cbf643f5f2"
+    },
+    {
+      name: "Carrot",
+      price: 50,
+      image: "https://images.unsplash.com/photo-1582515073490-39981397c445"
+    },
+    {
+      name: "Broccoli",
+      price: 70,
+      image: "https://images.unsplash.com/photo-1584306670957-7ea0a2b1a0e2"
+    },
+    {
+      name: "Capsicum",
+      price: 60,
+      image: "https://images.unsplash.com/photo-1601648764658-cf37e8c89b22"
+    }
+  ];
+
+  let cart = 0;
+  const vegList = document.getElementById("vegList");
+  const cartCount = document.getElementById("cartCount");
+
+  function loadVegetables() {
+    vegetables.forEach((veg) => {
+      vegList.innerHTML += `
+        <div class="col-md-4 col-lg-3 mb-4">
+          <div class="card veg-card h-100">
+            <img src="${veg.image}" class="card-img-top" height="200" style="object-fit:cover;">
+            <div class="card-body text-center">
+              <h5 class="card-title">${veg.name}</h5>
+              <p class="price">₹${veg.price} / kg</p>
+              <button class="btn btn-success w-100" onclick="addToCart()">Add to Cart</button>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  }
+
+  function addToCart() {
+    cart++;
+    cartCount.innerText = cart;
+  }
+
+  loadVegetables();
+</script>
+
+</body>
+</html>

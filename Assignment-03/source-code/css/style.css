@@ -1,0 +1,189 @@
+/* CSS for Campus Tiffin + */
+/* Palette:
+   --brand-orange: #F26B21
+   --brand-maroon: #7C1415
+*/
+
+:root{
+  --brand-orange: #F26B21;
+  --brand-maroon: #7C1415;
+  --bg: #fff;
+  --muted: #6b6666;
+  --container: 1150px;
+  --radius: 12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:var(--bg);
+  color:#222;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  line-height:1.45;
+}
+
+/* containers */
+.container{
+  max-width:var(--container);
+  margin:0 auto;
+  padding:0 20px;
+}
+
+/* Topbar */
+.topbar{
+  background:var(--brand-maroon);
+  color:#fff;
+  font-size:0.95rem;
+}
+.topbar .container{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:8px 20px;
+}
+.topbar p{margin:0}
+.topbar .notify{background:#fff;color:var(--brand-maroon);padding:6px 10px;border-radius:999px;text-decoration:none;font-weight:600}
+
+/* Header */
+.site-header{
+  background:transparent;
+  position:sticky;
+  top:0;
+  z-index:40;
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;padding:18px 20px;
+}
+.logo img{display:block}
+
+/* Nav */
+.main-nav{
+  display:flex;gap:18px;align-items:center;
+}
+.main-nav a{
+  color:#222;text-decoration:none;padding:8px 6px;border-radius:8px;font-weight:500;
+}
+.main-nav a.active, .main-nav a:hover{
+  color:var(--brand-maroon);
+}
+
+/* menu toggle for mobile */
+.menu-toggle{display:none;background:none;border:0;font-size:20px}
+
+/* Buttons */
+.btn{
+  display:inline-block;font-weight:600;text-decoration:none;padding:10px 16px;border-radius:12px;transition:all .18s ease;
+}
+.btn.small{padding:6px 10px;border-radius:999px}
+.btn.primary{background:var(--brand-orange);color:#fff;border:1px solid rgba(0,0,0,0.06)}
+.btn.ghost{background:transparent;border:2px solid var(--brand-orange);color:var(--brand-orange)}
+.btn.outline{background:transparent;border:2px solid var(--brand-maroon);color:var(--brand-maroon)}
+.btn.primary.large{padding:14px 26px;font-size:1.05rem}
+.btn:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,0.08)}
+
+/* HERO */
+.hero{
+  padding:48px 0 60px;
+  background: linear-gradient(180deg, #fff8f3 0%, rgba(242,107,33,0.06) 100%);
+}
+.hero-grid{
+  display:grid;
+  grid-template-columns: 1fr 520px;
+  gap:40px;
+  align-items:center;
+}
+
+/* Left side */
+.hero-content h1{
+  font-family: "Playfair Display", serif;
+  font-size: clamp(2.4rem, 4vw, 4.4rem);
+  margin:0 0 12px;
+  line-height:1.01;
+  color:var(--brand-maroon);
+}
+.hero-content .accent{
+  color:var(--brand-orange);
+  display:inline-block;
+}
+.lead{color:var(--muted);font-size:1.05rem;margin-bottom:18px}
+
+/* features */
+.features{display:flex;gap:18px;margin-top:22px;list-style:none;padding:0}
+.features li{background:transparent;padding:6px 0}
+.features li strong{display:block;color:#111}
+
+/* Hero images stacked */
+.hero-media{display:flex;justify-content:center}
+.stacked-images{position:relative;width:360px;height:360px;display:flex;align-items:center;justify-content:center}
+.stacked-images img{
+  width:220px;height:220px;object-fit:cover;border-radius:16px;box-shadow:0 18px 40px rgba(124,20,21,0.12);
+  position:absolute;transition:transform .3s ease;
+  border:6px solid #fff;
+}
+.stacked-images img:nth-child(1){transform: rotate(-12deg) translate(-40px,-10px);z-index:10}
+.stacked-images img:nth-child(2){transform: rotate(6deg) translate(20px,0);z-index:11}
+.stacked-images img:nth-child(3){transform: rotate(18deg) translate(60px,12px);z-index:9}
+
+.stacked-images img:hover{transform:translateY(-8px) scale(1.02)}
+
+/* Plans cards */
+.plans{padding:44px 0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:18px}
+.card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 8px 30px rgba(0,0,0,0.06)}
+.card img{width:100%;height:150px;object-fit:cover}
+.card-body{padding:16px}
+.card-body h3{margin:0 0 8px;color:var(--brand-maroon)}
+.card-meta{color:var(--muted);margin-bottom:8px}
+
+/* CTA strip */
+.cta-strip{background:var(--brand-maroon);color:#fff;padding:26px 0;text-align:center;border-radius:12px;margin:28px 0}
+.cta-strip a{margin-top:8px}
+
+/* footer */
+.site-footer{background:#f7f5f3;padding:28px 0 48px;margin-top:40px}
+.footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:18px;align-items:start}
+.footer-nav a{display:block;color:#333;text-decoration:none;margin-bottom:6px}
+
+/* Page content small utilities */
+.page-content{padding:36px 0}
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.cards.small{display:flex;gap:12px}
+
+/* Forms */
+.contact-form{background:#fff;padding:18px;border-radius:12px;box-shadow:0 8px 24px rgba(0,0,0,0.04)}
+.form-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.contact-form label{display:block;font-size:0.95rem;color:#222}
+.contact-form input, .contact-form textarea, .contact-form select{
+  width:100%;padding:10px;border-radius:8px;border:1px solid #e6e2e2;margin-top:6px;font-size:0.95rem
+}
+.form-actions{margin-top:12px;display:flex;gap:12px}
+
+/* small screens */
+@media (max-width:1000px){
+  .hero-grid{grid-template-columns:1fr 380px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .plans-grid{grid-template-columns:repeat(2,1fr)}
+}
+
+@media (max-width:760px){
+  .header-inner{padding:12px}
+  .main-nav{display:none}
+  .menu-toggle{display:inline-block}
+  .hero-grid{grid-template-columns:1fr;gap:26px}
+  .stacked-images{width:300px;height:300px}
+  .cards{grid-template-columns:1fr}
+  .card img{height:210px}
+  .form-grid{grid-template-columns:1fr}
+  .two-col{grid-template-columns:1fr}
+  .footer-grid{grid-template-columns:1fr}
+}
+
+/* small animated reveal */
+.in-view{transform:none;opacity:1;transition:all .6s cubic-bezier(.2,.9,.3,1)}
+.reveal{
+  transform:translateY(18px);
+  opacity:0;
+}

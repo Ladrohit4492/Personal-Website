@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Contact — Campus Tiffin +</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script defer src="js/main.js"></script>
+</head>
+<body>
+  <div class="topbar"><div class="container"><p>Questions? Drop us a message.</p></div></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="logo" href="index.html"><img src="assets/logo.svg" alt="Campus Tiffin +"></a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="services.html">Plans</a>
+        <a href="contact.html" class="active">Contact</a>
+      </nav>
+      <div class="nav-cta">
+        <a class="btn primary" href="services.html">Order</a>
+        <button id="menu-toggle" class="menu-toggle">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container page-content">
+    <h1>Contact & Order</h1>
+    <p class="lead">Fill the form to request an order or ask any questions. We'll get back within 24 hours (student support priority).</p>
+
+    <form id="contact-form" class="contact-form" novalidate>
+      <div class="form-grid">
+        <label>
+          Full name
+          <input type="text" name="name" id="name" required placeholder="Your name">
+        </label>
+
+        <label>
+          Student Email
+          <input type="email" name="email" id="email" required placeholder="you@college.edu">
+        </label>
+
+        <label>
+          Student ID (optional)
+          <input type="text" name="studentId" id="studentId" placeholder="e.g. 20BCS1234">
+        </label>
+
+        <label>
+          Delivery address
+          <input type="text" name="address" id="address" required placeholder="Hostel name, room no, campus">
+        </label>
+
+        <label>
+          Plan interested in
+          <select name="plan" id="plan">
+            <option value="single">Single Meal</option>
+            <option value="weekly" selected>Weekly Plan</option>
+            <option value="monthly">Monthly Plan</option>
+          </select>
+        </label>
+
+        <label>
+          Preferred start date
+          <input type="date" name="startDate" id="startDate">
+        </label>
+      </div>
+
+      <label>
+        Message
+        <textarea name="message" id="message" rows="4" placeholder="Tell us any allergies, preferences, or questions."></textarea>
+      </label>
+
+      <div class="form-actions">
+        <button type="submit" class="btn primary">Send Request</button>
+        <button type="reset" class="btn outline">Reset</button>
+      </div>
+    </form>
+
+    <div id="form-result" class="form-result" aria-live="polite"></div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><img src="assets/logo.svg" alt="logo" width="120"><small>© <span id="year-4"></span> Campus Tiffin +</small></div>
+      <div><nav class="footer-nav"><a href="index.html">Home</a><a href="services.html">Plans</a><a href="about.html">About</a></nav></div>
+      <div><p>Email: hello@campustiffinplus.example</p></div>
+    </div>
+  </footer>
+</body>
+</html>
