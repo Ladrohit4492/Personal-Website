@@ -1,0 +1,389 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: system-ui, sans-serif;
+}
+
+body {
+    background-color: #000;
+    color: #fff;
+}
+html {
+    scroll-behavior: smooth;
+}
+section {
+    scroll-margin-top: 90px;
+}
+section {
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+
+/* NAVBAR */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    height: 70px;
+    padding: 0 60px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(10px);
+}
+
+.nav-left {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.nav-center {
+    list-style: none;
+    display: flex;
+    gap: 50px;
+    color: #aaa;
+    font-size: 14px;
+}
+
+.nav-right span {
+    margin-left: 15px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.nav-right a {
+    color: #aaa;
+    margin-left: 15px;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.nav-right a:hover {
+    color: #fff;
+}
+
+.nav-link {
+    color:#aaa;
+    text-decoration: none;
+    transition: color 0.3s;
+    -webkit-transition: color 0.3s;
+    -moz-transition: color 0.3s;
+    -ms-transition: color 0.3s;
+    -o-transition: color 0.3s;
+}
+
+.nav-link:hover{
+    color : #fff;
+}
+
+.nav-link.active {
+    color: #2ecc71;
+    font-weight: 600;
+}
+
+/* HERO */
+.hero {
+    min-height: calc(100vh - 70px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-container {
+    width: 90%;
+    max-width: 1400px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* LEFT */
+.hero-left {
+    max-width: 620px;
+}
+
+.hero-left h1 {
+    font-size: clamp(48px, 5vw, 68px);
+    margin-bottom: 20px;
+}
+
+
+.hero-left p {
+    color: #aaa;
+    line-height: 1.8;
+    font-size: 18px;
+    max-width: 600px;
+    margin-bottom: 30px;
+}
+
+
+.hero-left button {
+    background-color: #2ecc71;
+    color: #000;
+    border: none;
+    padding: 16px 34px;
+    font-size: 17px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+
+/* WORKED WITH */
+.worked-with {
+    margin-top: 50px;
+}
+
+.worked-with p {
+    color: #777;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.logos {
+    display: flex;
+    gap: 20px;
+}
+
+.logos span {
+    padding: 8px 14px;
+    border: 1px solid #222;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #888;
+}
+
+.hero-right img {
+    width: 380px;
+    height: 380px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 0 40px rgba(46, 204, 113, 0.15);
+}
+
+
+.skills {
+    padding: 100px 8%;
+    background-color: #000;
+}
+
+.skills h2 {
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.skill-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 25px;
+    border-radius: 12px;
+    transition: transform 0.3s, border 0.3s;
+}
+
+.skill-card h3 {
+    margin-bottom: 10px;
+    color: #2ecc71;
+}
+
+.skill-card p {
+    color: #aaa;
+    line-height: 1.6;
+}
+
+.skill-card:hover {
+    transform: translateY(-6px);
+    border-color: #2ecc71;
+}
+
+.about {
+    padding: 100px 8%;
+    background-color: #000;
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    align-items: center;
+}
+
+.about h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.about-intro {
+    color: #aaa;
+    line-height: 1.7;
+    margin-bottom: 25px;
+}
+
+.about-points {
+    list-style: none;
+}
+
+.about-points li {
+    margin-bottom: 12px;
+    color: #ddd;
+}
+
+/* RIGHT SIDE CARDS */
+.about-right {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+}
+
+.about-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.about-card h3 {
+    color: #2ecc71;
+    margin-bottom: 8px;
+}
+
+.about-card p {
+    color: #aaa;
+}
+
+.bottom-section {
+    padding: 100px 8% 120px;
+    background: linear-gradient(to bottom, #000, #050505);
+}
+
+.bottom-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+.bottom-card {
+    background: #111;
+    border: 1px solid #222;
+    padding: 35px;
+    border-radius: 14px;
+    transition: transform 0.3s, border 0.3s;
+}
+
+.bottom-card h2 {
+    font-size: 26px;
+    margin-bottom: 15px;
+    color: #2ecc71;
+}
+
+.bottom-card p {
+    color: #aaa;
+    line-height: 1.7;
+    margin-bottom: 10px;
+}
+
+.bottom-card span {
+    color: #fff;
+    font-weight: 500;
+}
+
+.bottom-card:hover {
+    transform: translateY(-6px);
+    border-color: #2ecc71;
+}
+
+.skills {
+    padding: 120px 8% 160px; /* extra bottom padding */
+    background-color: #000;
+    border-bottom: 1px solid #111;
+}
+
+.achievements {
+    padding: 0 8%;
+    background-color: #000;
+}
+
+.achievements-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.achievements h2 {
+    font-size: 36px;
+    color: #2ecc71;
+    margin-bottom: 20px;
+}
+
+.achievements p {
+    color: #aaa;
+    line-height: 1.8;
+    font-size: 18px;
+}
+
+.contact {
+    padding: 0 8% 80px;
+    background: linear-gradient(to top, #000, #050505);
+    border-top: 1px solid #111;
+}
+
+.contact-container {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+}
+
+.contact h2 {
+    font-size: 34px;
+    color: #2ecc71;
+    margin-bottom: 25px;
+}
+
+.contact p {
+    color: #aaa;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+.contact span {
+    color: #fff;
+    font-weight: 500;
+}
+
+.contact-links {
+    margin-top: 30px;
+}
+
+.contact-links a {
+    color: #aaa;
+    margin: 0 15px;
+    text-decoration: none;
+    font-size: 15px;
+}
+
+.contact-links a:hover {
+    color: #2ecc71;
+}
+
+.achievements,
+.contact {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+.achievements-container,
+.contact-container {
+    width: 100%;
+}
